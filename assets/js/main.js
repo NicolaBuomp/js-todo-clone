@@ -1,11 +1,7 @@
 $(document).ready(function () {
     
 
-    var todoItem = [
-        'Seguire la lezione',
-        "Fare l'esercizio pomeridiano",
-        "Consegnare l'esercizio",
-    ];
+    var todoItem = ['Seguire la lezione', "Fare l'esercizio pomeridiano","Consegnare l'esercizio"];
 
     var list = $('.todo');
     var newItem = $('.input-text');
@@ -26,8 +22,7 @@ $(document).ready(function () {
     /* 
     Rimozione item dalla lista
     In questo caso riusciamo a eleminare tutti gli elementi 
-    sia quelli inseriti in precedenza che quelli inseriti in 
-    un secondo momento 
+    sia quelli inseriti in precedenza che quelli inseriti dall'utente 
     */
 
     $('body').on('click', '.todo li i', function(){
@@ -50,12 +45,12 @@ $(document).ready(function () {
                 newItem.val('');
             }
         }
-
     });
 
-    // Rediamo il ToDo completato
+    // Rendiamo il ToDo completato
     $('body').on('click', '.todo li', function(){
         $(this).toggleClass('completed');
+        $(this).toggleClass('fas fa-check');
     });
 
 
